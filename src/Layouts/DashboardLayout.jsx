@@ -1,19 +1,23 @@
 import React from "react";
+import Sidebar from "../components/Sidebar";
+import { Outlet } from "react-router";
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = () => {
   return (
-    <main className="min-h-screen bg-gray-100 p-4">
+    <main className="min-h-screen bg-white">
       {/* Sidebar */}
-      <aside className="fixed top-4 left-4 w-24 h-full bg-red-50 rounded-2xl p-4">
-        hi
+      <aside className="fixed top-4 left-4 w-20 md:w-56 h-full bg-gray-100 rounded-2xl">
+        <Sidebar />
       </aside>
 
       {/* Body Content */}
-      <section className="ml-32">
+      <section className="ml-26 md:ml-64">
         {/* Navbar */}
-        <nav className="sticky top-4 bg-red-50 rounded-2xl p-4 mb-4">nav</nav>
+        <nav className="sticky top-4 bg-gray-100 rounded-2xl p-4 mb-4">nav</nav>
         {/* Main Content */}
-        <div className="bg-red-50 rounded-2xl p-4 min-h-[80vh]">{children}</div>
+        <div className="bg-gray-100 rounded-2xl p-4 min-h-[80vh]">
+          <Outlet></Outlet>{" "}
+        </div>
       </section>
     </main>
   );
