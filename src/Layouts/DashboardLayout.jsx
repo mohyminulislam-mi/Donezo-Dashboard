@@ -12,14 +12,14 @@ const DashboardLayout = () => {
       </aside>
 
       {/* Body Content */}
-      <section className="ml-26 md:ml-64">
+      <section className="ml-24 md:ml-60">
         {/* Navbar */}
         <nav className="sticky top-4 bg-gray-100 rounded-2xl p-4">
           {" "}
           <Navbar />
         </nav>
         {/* Main Content */}
-        <div className="bg-gray-100 rounded-2xl p-4 min-h-[80vh] mt-4 md:mt-8">
+        <div className="bg-gray-100 rounded-2xl p-4 min-h-[80vh] mt-2 md:mt-4">
           <Outlet></Outlet>{" "}
         </div>
       </section>
