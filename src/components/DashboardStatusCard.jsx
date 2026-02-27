@@ -26,33 +26,26 @@ const DashboardStatusCard = () => {
 
   const stats = [
     {
-      title: "revenue",
+      title: "Revenue",
       value: `$${((data?.revenue || 0) / 1000).toFixed(1)}K`,
-      increase: "2 Increased from last month",
       isGreen: true,
-      badge: "2",
     },
     {
       title: "Total Users",
       value: `${((data?.totalUsers || 0) / 1000).toFixed(1)}K`,
-      increase: "4 Increased from last month",
-      badge: "4",
     },
     {
       title: "Active Users",
       value: `${((data?.activeUsers || 0) / 1000).toFixed(1)}K`,
-      increase: "d6 Increased from last month",
-      badge: "2",
     },
     {
       title: "Total Growth",
       value: data?.growth + "%",
-      increase: "Growth: " + data?.growth + "%",
     },
   ];
 
   return (
-    <div className="p-6 md:p-10 bg-gray-50 min-h-screen">
+    <div className="p-6 md:p-10">
       {/* import header  */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>
@@ -94,25 +87,6 @@ const DashboardStatusCard = () => {
               {item.title}
             </p>
             <h2 className="text-4xl font-bold my-4">{item.value}</h2>
-
-            <div className="flex items-center gap-1 mt-2">
-              {item.badge && (
-                <div
-                  className={`flex items-center text-[10px] px-1 py-0.5 rounded border ${
-                    item.isGreen
-                      ? "bg-green-800/30 border-green-400 text-green-300"
-                      : "bg-green-50 border-green-200 text-green-600"
-                  }`}
-                >
-                  {item.badge} <BsArrowUpShort />
-                </div>
-              )}
-              <p
-                className={`text-xs ${item.isGreen ? "text-green-200" : "text-gray-400"}`}
-              >
-                {item.increase}
-              </p>
-            </div>
           </div>
         ))}
       </div>
