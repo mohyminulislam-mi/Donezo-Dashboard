@@ -6,7 +6,7 @@ import Reveal from "../components/common/Reveal";
 
 const TimeTracker = () => {
   const [seconds, setSeconds] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(true); // Login e automatic start
   const intervalRef = useRef(null);
 
   const formatTime = (totalSeconds) => {
@@ -19,6 +19,7 @@ const TimeTracker = () => {
     return `${hrs}:${mins}:${secs}`;
   };
 
+  // Timer effect
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {
@@ -45,7 +46,7 @@ const TimeTracker = () => {
 
   return (
     <Reveal>
-      <div className="bg-gradient-to-br from-[#076141] via-[#006442] to-[#023523] text-white p-11 rounded-3xl relative overflow-hidde">
+      <div className="bg-gradient-to-br from-[#076141] via-[#006442] to-[#023523] text-white p-11 rounded-3xl relative overflow-hidden">
         <p className="text-sm font-medium mb-4 tracking-wide">Time Tracker</p>
 
         <h2 className="text-4xl font-mono font-bold mb-6 text-center">

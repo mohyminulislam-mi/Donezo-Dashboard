@@ -44,7 +44,7 @@ const Sidebar = ({ isOpen, onClose }) => {
   ];
 
   return (
-    <div>
+    <div className="rounded-3xl">
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/40 md:hidden z-40 transition-opacity"
@@ -53,9 +53,9 @@ const Sidebar = ({ isOpen, onClose }) => {
       )}
       {/* Sidebar Container */}
       <aside
-        className={`fixed md:sticky top-0 left-0 h-screen bg-gray-100 z-50 transform transition-transform duration-300 rounded-r-2xl md:rounded-none
+        className={`fixed md:sticky top-0 left-0 h-screen bg-gray-100 z-50 transform transition-transform duration-300 rounded-2xl
         ${isOpen ? "translate-x-0" : "-translate-x-full"}
-        md:translate-x-0 w-68 shadow-md md:shadow-none`}
+        md:translate-x-0 w-64`}
       >
         <div className="flex flex-col h-full py-6">
           <div className="flex flex-col flex-1 overflow-hidden">

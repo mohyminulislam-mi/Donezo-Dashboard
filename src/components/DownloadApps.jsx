@@ -6,7 +6,7 @@ import Reveal from "../components/common/Reveal";
 const DownloadApps = () => {
   return (
     <Reveal>
-      <div className="mx-6 p-4 bg-[#023523] text-white rounded-3xl relative group">
+      <div className="mx-2 p-4 bg-[#023523] text-white rounded-3xl relative group">
         <div className="relative z-10 flex flex-col items-start">
           <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mb-4 border border-white/10">
             <PiMedalLight size={16} className="text-white" />
