@@ -1,10 +1,9 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { FiPlus, FiArrowUpRight } from "react-icons/fi";
-import { BsArrowUpShort } from "react-icons/bs";
 
 const DashboardStatusCard = () => {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["overviewData"],
     queryFn: async () => {
       const response = await fetch(
@@ -17,12 +16,6 @@ const DashboardStatusCard = () => {
 
   if (isLoading)
     return <div className="p-10 text-center font-bold">Loading...</div>;
-  if (error)
-    return (
-      <div className="p-10 text-red-500 text-center">
-        Error: {error.message}
-      </div>
-    );
 
   const stats = [
     {
@@ -45,7 +38,7 @@ const DashboardStatusCard = () => {
   ];
 
   return (
-    <div className="p-6 md:p-10">
+    <div className="px-1 py-5">
       {/* import header  */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>
@@ -55,10 +48,10 @@ const DashboardStatusCard = () => {
           </p>
         </div>
         <div className="flex gap-3">
-          <button className="flex items-center gap-2 bg-[#14532d] text-white px-5 py-2.5 rounded-full font-medium hover:bg-green-900 transition-all">
+          <button className="flex items-center gap-2 bg-[#14532d] text-white p-2.5 md:px-5 md:py-2.5 rounded-full font-medium hover:bg-green-900 transition-all cursor-pointer">
             <FiPlus /> Add Project
           </button>
-          <button className="border border-gray-300 px-5 py-2.5 rounded-full font-medium hover:bg-gray-100 transition-all">
+          <button className="border border-gray-300 p-2.5 md:px-5 md:py-2.5  rounded-full font-medium hover:bg-gray-100 transition-all cursor-pointer">
             Import Data
           </button>
         </div>
@@ -69,7 +62,7 @@ const DashboardStatusCard = () => {
         {stats.map((item, index) => (
           <div
             key={index}
-            className={`p-6 rounded-[24px] relative transition-all shadow-sm ${
+            className={`p-6 rounded-3xl relative transition-all shadow-sm ${
               item.isGreen
                 ? "bg-gradient-to-br from-[#14532d] to-[#22c55e] text-white"
                 : "bg-white text-gray-900 border border-gray-100"

@@ -20,7 +20,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search Task"
-            className="w-full bg-white border border-gray-100 rounded-2xl py-3.5 pl-14 pr-16 text-[14px] focus:outline-none focus:ring-1 focus:ring-[#006442] shadow-sm text-gray-600 placeholder:text-gray-400"
+            className="w-full bg-white border border-gray-100 rounded-2xl py-3.5 pl-14 pr-16 text-sm focus:outline-none focus:ring-1 focus:ring-[#006442] shadow-sm text-gray-600 placeholder:text-gray-400"
           />
           <div className="absolute right-4 flex items-center gap-1 bg-gray-200 border border-gray-100 px-2 py-1 rounded-lg text-gray-400 text-[11px] font-bold">
             <MdKeyboardCommandKey size={10} className="text-black" />
@@ -50,10 +50,10 @@ const Navbar = () => {
             />
           </div>
           <div className="md:flex flex-col hidden">
-            <span className="text-[15px] font-bold text-gray-800">
+            <span className="text-sm font-bold text-gray-800">
               Charlie Wilson
             </span>
-            <span className="text-[12px] text-gray-400 font-medium tracking-tight overflow-hidden text-ellipsis whitespace-nowrap max-w-37.5">
+            <span className="text-xs text-gray-400 font-medium tracking-tight overflow-hidden text-ellipsis whitespace-nowrap max-w-37.5">
               charlie@example.com
             </span>
           </div>

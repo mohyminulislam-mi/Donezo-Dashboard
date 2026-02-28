@@ -29,8 +29,8 @@ const Analytics = () => {
     percentage: Math.round((item.conversions / item.clicks) * 100) || 0,
   }));
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-      <h3 className="text-lg font-bold mb-6">Project Analytics</h3>
+    <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+      <h3 className="text-lg font-bold mb-6">Products Analytics</h3>
       <div className="h-37">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData}>
@@ -88,7 +88,7 @@ const Analytics = () => {
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white border border-green-100 px-2 py-1 rounded-md text-[10px] text-green-600 font-bold shadow-md">
+      <div className="bg-white border border-green-100 px-2 py-1 rounded-md text-xs text-green-600 font-bold shadow-md">
         {payload[0].payload.percentage}%
       </div>
     );

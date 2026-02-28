@@ -48,10 +48,10 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="flex flex-col h-screen w-20 md:w-56 py-6">
+    <div className="flex flex-col h-screen w-20 md:w-70 py-6">
       <div className="flex flex-col flex-1 overflow-hidden">
         {/* 1. logo */}
-        <div className="mb-10 flex items-center justify-center md:justify-start gap-3 px-6">
+        <div className="mb-6 flex items-center justify-center md:justify-start gap-3 px-6">
           <SiCircle className="text-green-700 text-2xl" />
           <h1 className="text-2xl font-extrabold text-green-700 hidden md:block">
             Denozo
@@ -59,7 +59,7 @@ const Sidebar = () => {
         </div>
         {/* 2. menus items */}
         <div className="flex-1 overflow-y-auto">
-          <p className="text-[10px] font-bold text-gray-400 tracking-widest mb-4 px-6 text-center md:text-left">
+          <p className="text-xs font-bold text-gray-400 tracking-widest mb-2 md:px-6 text-center md:text-left">
             MENU
           </p>
 
@@ -77,12 +77,12 @@ const Sidebar = () => {
                     ></div>
 
                     <div
-                      className={`flex items-center gap-3 w-full py-3 px-6 transition-all ${isActive ? "text-green-700 font-bold" : "text-gray-400 hover:text-gray-600"}`}
+                      className={`flex items-center gap-3 w-full py-2 px-6 transition-all ${isActive ? "text-green-700 font-bold" : "text-gray-400 hover:text-gray-600"}`}
                     >
                       <div className="text-2xl shrink-0">
                         {isActive ? <item.activeIcon /> : <item.icon />}
                       </div>
-                      <span className="hidden md:block text-[15px]">
+                      <span className="hidden md:block text-sm">
                         {item.name}
                       </span>
                     </div>
@@ -93,8 +93,8 @@ const Sidebar = () => {
           </div>
 
           {/* 3. general menus items */}
-          <div className="mt-8">
-            <p className="text-[10px] font-bold text-gray-400 tracking-widest mb-4 px-6 text-center md:text-left">
+          <div className="mt-5">
+            <p className="text-xs font-bold text-gray-400 tracking-widest mb-2 md:px-6 text-center md:text-left">
               GENERAL
             </p>
             <div className="flex flex-col">
@@ -115,7 +115,7 @@ const Sidebar = () => {
                         <div className="text-2xl shrink-0">
                           <item.icon />
                         </div>
-                        <span className="hidden md:block text-[15px]">
+                        <span className="hidden md:block text-sm">
                           {item.name}
                         </span>
                       </div>
@@ -127,9 +127,9 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      {/* <div className="hidden md:block">
+      <div className="hidden md:block">
         <DownloadApps />
-      </div> */}
+      </div>
     </div>
   );
 };
