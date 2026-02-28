@@ -1,16 +1,84 @@
-# React + Vite
+# Denozo - SaaS Task & Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Denozo** is a modern, high-performance dashboard designed for seamless task management and data visualization. Built with the latest React 19 and Tailwind CSS 4, it offers a clean, professional UI for tracking revenue, user growth, and project analytics.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [https://donezo-dashboard-kappa.vercel.app/](https://donezo-dashboard-kappa.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Real-time Analytics:** Interactive charts for revenue, active users, and growth tracking using **Recharts**.
+- **Task Management:** A centralized hub to plan, prioritize, and accomplish tasks with ease.
+- **Dynamic Sidebar:** Intuitive navigation including Dashboard, Tasks, Calendar, and Team management.
+- **Product Performance:** Quick overview of sales performance across different plans (Premium, Basic, Enterprise).
+- **Meeting Reminders:** Stay on top of your schedule with integrated meeting alerts and quick-action buttons.
+- **Modern UI/UX:** Smooth transitions and fluid animations powered by **Framer Motion**.
+- **Fully Responsive:** Optimized for all screen sizes with a "Download Mobile App" CTA.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+This project leverages the latest frontend technologies for speed and scalability:
+
+- **Framework:** [React 19](https://react.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) (with Vite integration)
+- **State Management:** [TanStack React Query v5](https://tanstack.com/query/latest)
+- **Routing:** [React Router 7](https://reactrouter.com/)
+- **Charts:** [Recharts](https://recharts.org/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **HTTP Client:** [Axios](https://axios-http.com/)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js**
+- **npm** or **yarn**
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone [https://github.com/mohyminulislam-mi/Donezo-Dashboard](https://github.com/mohyminulislam-mi/Donezo-Dashboard)
+    cd donezo-dashboard
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+
+---
+
+## 📸 Preview
+
+![Dashboard Preview](https://donezo-dashboard-kappa.vercel.app/screenshot.png)
+_(Note: Replace with your actual hosted image link or relative path like ./public/image_57d0db.png)_
+
+---
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+Developed with ❤️ by **Mohyminul Islam**
