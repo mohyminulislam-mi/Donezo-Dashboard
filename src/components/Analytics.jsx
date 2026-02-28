@@ -29,7 +29,7 @@ const Analytics = () => {
     percentage: Math.round((item.conversions / item.clicks) * 100) || 0,
   }));
   return (
-    <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+    <div className="bg-white p-6 rounded-3xl">
       <h3 className="text-lg font-bold mb-6">Products Analytics</h3>
       <div className="h-37">
         <ResponsiveContainer width="100%" height="100%">

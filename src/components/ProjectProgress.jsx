@@ -9,11 +9,11 @@ const ProjectProgress = () => {
 
   return (
     <Reveal>
-      <div className="lg:col-span-4 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center">
+      <div className="lg:col-span-4 bg-white p-6 rounded-3xl flex flex-col items-center">
         <h3 className="font-bold w-full text-left mb-4">Products Progress</h3>
 
         <div className="relative mt-4">
-          <svg width="200" height="120">
+          <svg width="200" height="170">
             {/* background */}
             <path
               d="M 20 110 A 80 80 0 0 1 180 110"
