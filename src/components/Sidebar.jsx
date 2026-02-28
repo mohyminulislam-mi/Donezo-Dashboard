@@ -11,8 +11,10 @@ import {
 } from "react-icons/lu";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { SiCircle, SiGoogleanalytics } from "react-icons/si";
+import useAuth from "../hooks/useAuth";
 
 const Sidebar = () => {
+  const { logout } = useAuth();
   const menusItems = [
     {
       name: "Dashboard",
@@ -40,11 +42,9 @@ const Sidebar = () => {
     },
     { name: "Team", path: "/team", icon: LuUsers, activeIcon: LuUsers },
   ];
-
   const generalItems = [
     { name: "Settings", path: "/settings", icon: LuSettings },
     { name: "Help", path: "/help", icon: LuBadgeHelp },
-    { name: "Logout", path: "/logout", icon: RiLogoutCircleRLine },
   ];
 
   return (
@@ -123,6 +123,13 @@ const Sidebar = () => {
                   )}
                 </NavLink>
               ))}
+              <button
+                onClick={() => logout()}
+                className="flex items-center gap-3 mt-1 text-left md:px-6 text-red-500 cursor-pointer"
+              >
+                {" "}
+                <RiLogoutCircleRLine className="text-2xl shrink-0" /> Logout
+              </button>
             </div>
           </div>
         </div>

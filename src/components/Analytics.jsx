@@ -8,7 +8,6 @@ import {
   Tooltip,
 } from "recharts";
 import { useQuery } from "@tanstack/react-query";
-import Reveal from "../components/common/Reveal";
 
 const Analytics = () => {
   const { data: analytics } = useQuery({
@@ -30,61 +29,59 @@ const Analytics = () => {
     percentage: Math.round((item.conversions / item.clicks) * 100) || 0,
   }));
   return (
-    <Reveal>
-      <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-        <h3 className="text-lg font-bold mb-6">Products Analytics</h3>
-        <div className="h-37">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={chartData}>
-              <XAxis
-                dataKey="name"
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#9ca3af" }}
-                dy={10}
-              />
-              <Tooltip
-                cursor={{ fill: "transparent" }}
-                content={<CustomTooltip />}
-              />
-              <Bar dataKey="value" radius={[20, 20, 20, 20]} barSize={45}>
-                {chartData?.map((entry, index) => (
-                  <Cell
-                    key={index}
-                    fill={
-                      index % 2 === 0
-                        ? "url(#stripes)"
-                        : index === 1
-                          ? "#15803d"
-                          : index === 3
-                            ? "#14532d"
-                            : "#4ade80"
-                    }
-                  />
-                ))}
-              </Bar>
-              <defs>
-                <pattern
-                  id="stripes"
-                  patternUnits="userSpaceOnUse"
-                  width="8"
-                  height="8"
-                  patternTransform="rotate(45)"
-                >
-                  <rect width="4" height="8" fill="#f3f4f6" />
-                  <path
-                    d="M0 0h8v8H0z"
-                    fill="none"
-                    stroke="#d1d5db"
-                    strokeWidth="1"
-                  />
-                </pattern>
-              </defs>
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
+    <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+      <h3 className="text-lg font-bold mb-6">Products Analytics</h3>
+      <div className="h-37">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={chartData}>
+            <XAxis
+              dataKey="name"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: "#9ca3af" }}
+              dy={10}
+            />
+            <Tooltip
+              cursor={{ fill: "transparent" }}
+              content={<CustomTooltip />}
+            />
+            <Bar dataKey="value" radius={[20, 20, 20, 20]} barSize={45}>
+              {chartData?.map((entry, index) => (
+                <Cell
+                  key={index}
+                  fill={
+                    index % 2 === 0
+                      ? "url(#stripes)"
+                      : index === 1
+                        ? "#15803d"
+                        : index === 3
+                          ? "#14532d"
+                          : "#4ade80"
+                  }
+                />
+              ))}
+            </Bar>
+            <defs>
+              <pattern
+                id="stripes"
+                patternUnits="userSpaceOnUse"
+                width="8"
+                height="8"
+                patternTransform="rotate(45)"
+              >
+                <rect width="4" height="8" fill="#f3f4f6" />
+                <path
+                  d="M0 0h8v8H0z"
+                  fill="none"
+                  stroke="#d1d5db"
+                  strokeWidth="1"
+                />
+              </pattern>
+            </defs>
+          </BarChart>
+        </ResponsiveContainer>
       </div>
-    </Reveal>
+    </div>
   );
 };
 
