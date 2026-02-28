@@ -1,6 +1,8 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { FiPlus, FiArrowUpRight } from "react-icons/fi";
+import Reveal from "../components/common/Reveal";
+import Loading from "../components/common/Loading";
 
 const DashboardStatusCard = () => {
   const { data, isLoading } = useQuery({
@@ -14,8 +16,7 @@ const DashboardStatusCard = () => {
     },
   });
 
-  if (isLoading)
-    return <div className="p-10 text-center font-bold">Loading...</div>;
+  if (isLoading) return <Loading />;
 
   const stats = [
     {
@@ -58,31 +59,33 @@ const DashboardStatusCard = () => {
       </div>
 
       {/* data card  */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((item, index) => (
-          <div
-            key={index}
-            className={`p-6 rounded-3xl relative transition-all shadow-sm ${
-              item.isGreen
-                ? "bg-gradient-to-br from-[#14532d] to-[#22c55e] text-white"
-                : "bg-white text-gray-900 border border-gray-100"
-            }`}
-          >
+      <Reveal>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((item, index) => (
             <div
-              className={`absolute top-5 right-5 w-8 h-8 rounded-full border flex items-center justify-center cursor-pointer ${item.isGreen ? "bg-white border-white text-black" : "border-black"}`}
+              key={index}
+              className={`p-6 rounded-3xl relative transition-all shadow-sm ${
+                item.isGreen
+                  ? "bg-gradient-to-br from-[#14532d] to-[#22c55e] text-white"
+                  : "bg-white text-gray-900 border border-gray-100"
+              }`}
             >
-              <FiArrowUpRight size={18} />
-            </div>
+              <div
+                className={`absolute top-5 right-5 w-8 h-8 rounded-full border flex items-center justify-center cursor-pointer ${item.isGreen ? "bg-white border-white text-black" : "border-black"}`}
+              >
+                <FiArrowUpRight size={18} />
+              </div>
 
-            <p
-              className={`text-sm font-medium ${item.isGreen ? "text-green-100" : "text-gray-500"}`}
-            >
-              {item.title}
-            </p>
-            <h2 className="text-4xl font-bold my-4">{item.value}</h2>
-          </div>
-        ))}
-      </div>
+              <p
+                className={`text-sm font-medium ${item.isGreen ? "text-green-100" : "text-gray-500"}`}
+              >
+                {item.title}
+              </p>
+              <h2 className="text-4xl font-bold my-4">{item.value}</h2>
+            </div>
+          ))}
+        </div>
+      </Reveal>
     </div>
   );
 };
